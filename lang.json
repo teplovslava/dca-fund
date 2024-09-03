@@ -1,0 +1,11 @@
+{
+    "stacking" : {
+        "ru" : {
+            "balance": "Баланс",
+            "createStaking": "Застекировать",
+            "availableForReceipt":"Доступно к получению",
+            "stacking": "Стекирование",
+            "connectedWallet" : "Кошелек подключен"
+        }
+    }
+}
