@@ -1,30 +1,40 @@
-import lang from "../../../../lang.json";
+import lang from "@/../lang";
 import Button from "@shared/ui/components/Button";
 import PercentInfoBlock from "@shared/ui/components/PercentInfoBlock";
 import { StackingModal } from "@features/StackingModal";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useAccount } from "wagmi";
+import { LangContext } from "@/app/context/LangaugeContext";
 
-const fakeData = [
-  {
-    percent: 6,
-    period: "3 месяца",
-  },
-  {
-    percent: 8,
-    period: "6 месяцев",
-  },
-  {
-    percent: 9,
-    period: "9 месяцев",
-  },
-  {
-    percent: 10,
-    period: "12 месяцев",
-  },
-];
+
 
 function Statistics() {
   const [isVisibleStackingModal, setIsVisibleStackingModal] = useState(false);
+  const { address } = useAccount()
+
+  const {language} = useContext(LangContext)
+
+  const fakeData = [
+    {
+      percent: 6,
+      period: `3 ${language.stacking.month}`,
+    },
+    {
+      percent: 8,
+      period: `6 ${language.stacking.months}`,
+    },
+    {
+      percent: 9,
+      period: `9 ${language.stacking.months}`,
+    },
+    {
+      percent: 10,
+      period: `12 ${language.stacking.months}`,
+    },
+  ];
+
+
+
   return (
     <>
       <div className="bg-[#A8BBFF0A] p-[40px] rounded-[30px] flex flex-col gap-[30px] items-start">
@@ -39,11 +49,17 @@ function Statistics() {
         </div>
         <div className="w-[190px] max-[576px]:w-full">
           <Button
-            onClick={() => setIsVisibleStackingModal(true)}
+            onClick={() => {
+              if(address){
+                setIsVisibleStackingModal(true)
+              }else{
+                alert(language.stacking.notConnectedWallet)
+              }
+            }}
             type="button"
             view="primary"
           >
-            {lang.stacking.ru.createStaking}
+            {language.stacking.createStaking}
           </Button>
         </div>
       </div>
