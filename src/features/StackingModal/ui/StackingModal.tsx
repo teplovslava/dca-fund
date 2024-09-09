@@ -2,11 +2,12 @@ import { createPortal } from "react-dom";
 import Modal from "@shared/ui/components/Modal";
 import Input from "@shared/ui/components/Input";
 import Select from "@/shared/ui/components/Select";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "@shared/ui/components/Button";
 import useStackingModal from "@/features/StackingModal/model/useStackingModal";
 import { LangContext } from "@/app/context/LangaugeContext";
-import CustomCheckbox from "../../../shared/ui/components/CustomCheckbox";
+import CustomCheckbox from "@/shared/ui/components/CustomCheckbox";
+import Loader from "@/shared/ui/components/Loader";
 
 interface IProps {
   isVisible: boolean;
@@ -16,10 +17,11 @@ interface IProps {
 
 
 function StackingModal({ isVisible, setIsVisible }: IProps) {
-  const { inputRef, value, setValue, setPeriod, error, onHandleClick } =
+  const { inputRef, value, setValue, setPeriod, error, onHandleClick, loading } =
     useStackingModal();
 
     const {language} = useContext(LangContext)
+    const [politicsChecked, setPoliticsChecked] = useState(false)
 
     const data = [
       {
@@ -40,8 +42,10 @@ function StackingModal({ isVisible, setIsVisible }: IProps) {
       },
     ];
 
+
   return createPortal(
     <Modal visible={isVisible} setVisible={setIsVisible}>
+      {loading && <Loader/>}
       <div>
         <p className="text-[32px] text-white font-[700] text-center w-full mb-[46px]">
          {language.stacking.stacking}
@@ -66,14 +70,14 @@ function StackingModal({ isVisible, setIsVisible }: IProps) {
           />
         </div>
         <div className="w-full mb-2">
-          <CustomCheckbox label={language.stacking.agreement}/>
+          <CustomCheckbox label={language.stacking.agreement} onChange={(val) => setPoliticsChecked(val)}/>
         </div>
         <div className="w-full">
           <Button
-            onClick={onHandleClick}
+            onClick={() => onHandleClick(() => setIsVisible(false))}
             type="button"
             view="primary"
-            disabled={!value.length}
+            disabled={!value.length || !politicsChecked}
           >
             {language.stacking.createStaking}
           </Button>

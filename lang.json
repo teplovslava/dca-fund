@@ -23,7 +23,18 @@
       "termsOfUseOfTheService":"Terms of use of the service",
       "chooseStackingPeriod": "Choose stacking period",
       "upTo":"up to",
-      "agreement":"I agree and accept the Warning about possible risks and the Terms of Use of the service"
+      "agreement":"I agree and accept the Warning about possible risks and the Terms of Use of the service",
+      "date":"Date",
+      "stackingPeriod":"Stacking period",
+      "sum": "Sum",
+      "accrued":"Accrued",
+      "received":"Received",
+      "disconnect":"Disconnect",
+      "success":"Success",
+      "error":"Error",
+      "notEnoughUsdt" : "Not enough USDT",
+      "purchaseError":"Purchase error",
+      "yourWalletHasNotPassed":"Your wallet has not passed AML verification and has been disabled. Connect another wallet."
     }
   },
     "RU": {
@@ -50,7 +61,19 @@
         "termsOfUseOfTheService":"Условия пользования сервисом",
         "chooseStackingPeriod":"Выберите период стекирования:",
         "upTo":"до",
-        "agreement":"Я согласен и принимаю Предупреждение о возможных рисках и Условия пользования сервисом"
+        "agreement":"Я согласен и принимаю Предупреждение о возможных рисках и Условия пользования сервисом",
+        "date":"Дата",
+        "stackingPeriod":"Период стерирования",
+        "sum": "Сумма",
+        "accrued":"Начислено",
+        "received":"Получено",
+        "disconnect":"Отключить",
+        "success":"Успешно",
+        "error":"Ошибка",
+        "notEnoughUsdt" : "Недостаточно USDT",
+        "purchaseError":"Ошибка покупки",
+        "yourWalletHasNotPassed":"Ваш кошелек не прошел проверку AML и был отключен. Подключите другой кошелек."
+
       }
     }
 }

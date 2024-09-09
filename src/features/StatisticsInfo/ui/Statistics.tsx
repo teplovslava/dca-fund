@@ -5,6 +5,8 @@ import { StackingModal } from "@features/StackingModal";
 import { useContext, useState } from "react";
 import { useAccount } from "wagmi";
 import { LangContext } from "@/app/context/LangaugeContext";
+import { Bounce, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -53,7 +55,18 @@ function Statistics() {
               if(address){
                 setIsVisibleStackingModal(true)
               }else{
-                alert(language.stacking.notConnectedWallet)
+
+                toast.error(language.stacking.notConnectedWallet, {
+                  position: "top-right",
+                  autoClose: 3000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                  transition: Bounce,
+                });
               }
             }}
             type="button"

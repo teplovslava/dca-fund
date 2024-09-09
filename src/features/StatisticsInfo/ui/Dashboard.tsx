@@ -12,21 +12,14 @@ import { formatEther, parseEther } from 'viem'
 import { useContext, useEffect, useState } from "react";
 import { usdt } from "@/abi/abi";
 import { LangContext } from "@/app/context/LangaugeContext";
+import { Bounce, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const formatter = new Intl.NumberFormat('en', {
   //style: 'currency',
   //currency: 'USDT'
 });
 
-const tableHeader = [
-  "№",
-  "Дата",
-  "Период стерирования",
-  "Сумма",
-  "%",
-  "Начислено",
-  "Получено",
-];
 
 const percents = [
   {months: 0, day: 0}, 
@@ -142,15 +135,55 @@ function Dashboard() {
         })
   
         if(transactionReceipt.status == "success"){
-          alert("успешно")
+          toast.success(language.stacking.success, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
         }else{
-          alert("ошибка")
+          toast.error(language.stacking.error, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
         }
       }else{
-        alert("Попробуйте позже, не чем платить!") //Придумать че писать
+        toast.error(language.stacking.notEnoughUsdt, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     }else{
-      alert("Попробуйте позже, не чем платить!") //Придумать че писать
+      toast.error(language.stacking.notEnoughUsdt, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
     }
   }
 
@@ -168,9 +201,29 @@ function Dashboard() {
     })
 
     if(transactionReceipt.status == "success"){
-      alert("успешно")
+      toast.success(language.stacking.success, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
     }else{
-      alert("ошибка")
+      toast.error(language.stacking.error, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
     }
   }
 
@@ -179,6 +232,17 @@ function Dashboard() {
       getAmounts()
     }
   }, [getUser])
+
+
+const tableHeader = [
+  "№",
+  language.stacking.date,
+  language.stacking.stackingPeriod,
+  language.stacking.sum,
+  "%",
+  language.stacking.accrued,
+  language.stacking.received,
+];
 
   return (
     <>
