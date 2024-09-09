@@ -14,6 +14,8 @@ import SANTIMENT from "@shared/ui/icons/partner 13.svg";
 import TRUST from "@shared/ui/icons/partner 14.svg";
 import METAMASK from "@shared/ui/icons/partner 15.svg";
 import TRONLINK from "@shared/ui/icons/partner 16.svg";
+import { useContext } from "react";
+import { LangContext } from "../../app/context/LangaugeContext";
 
 const partnerList = [
   {
@@ -83,11 +85,17 @@ const partnerList = [
 ];
 
 function Partners() {
+  const { language } = useContext(LangContext);
   return (
-    <div className="element-background grid xl:grid-cols-8 grid-cols-4 max-[676px]:grid-cols-2 w-full justify-items-center gap-[10px]">
-      {partnerList.map((partner, i) => (
-        <img key={i} src={partner.img} alt={partner.alt} />
-      ))}
+    <div className="element-background">
+      <p className="font-[700] text-[#fff] text-[20px] mb-4">
+        {language.stacking.partners}
+      </p>
+      <div className="grid xl:grid-cols-8 grid-cols-4 max-[676px]:grid-cols-2 w-full justify-items-center gap-[10px]">
+        {partnerList.map((partner, i) => (
+          <img key={i} src={partner.img} alt={partner.alt} />
+        ))}
+      </div>
     </div>
   );
 }

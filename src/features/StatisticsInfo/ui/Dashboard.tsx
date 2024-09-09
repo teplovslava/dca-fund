@@ -247,6 +247,9 @@ const tableHeader = [
   return (
     <>
       <div className="element-background flex flex-col gap-[15px]">
+      <p className="font-[700] text-[#fff] text-[20px]">
+          {language.stacking.statistic}
+        </p>
         <div className="flex flex-row items-center justify-between max-[787px]:items-start max-[576px]:flex-col">
           <div>
             <div className="text-[14px] text-[#8296A4]">

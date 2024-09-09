@@ -81,31 +81,31 @@ function Statistic() {
           if(Number(payPeriods3) > Number(getUser[k].withdrawnTime)){
             const day = (Number(payPeriods3) - Number(getUser[k].withdrawnTime)) / import.meta.env.VITE_SECONDS_DELAY
             if(day >= 1){
-              let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.2)
-              amount += sum
+              //let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.2)
+              amount += parseFloat(formatEther(getUserAmount)) //sum
             }
           }
         }else if(Number(getUser[k].period) == 6){
           if(Number(payPeriods6) > Number(getUser[k].withdrawnTime)){
             const day = (Number(payPeriods6) - Number(getUser[k].withdrawnTime)) / import.meta.env.VITE_SECONDS_DELAY
             if(day >= 1){
-              let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.26)
-              amount += sum
+              //let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.26)
+              amount += parseFloat(formatEther(getUserAmount)) //sum
             }
           }
         }else if(Number(getUser[k].period) == 9){
           if(Number(payPeriods9) > Number(getUser[k].withdrawnTime)){
             const day = (Number(payPeriods9) - Number(getUser[k].withdrawnTime)) / import.meta.env.VITE_SECONDS_DELAY
             if(day >= 1){
-              let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.3)
-              amount += sum
+              //let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.3)
+              amount += parseFloat(formatEther(getUserAmount)) //sum
             }
           }
         }else if(Number(getUser[k].period) == 12){
           const day = (Number(payPeriods12) - Number(getUser[k].withdrawnTime)) / import.meta.env.VITE_SECONDS_DELAY
             if(day >= 1){
-              let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.36)
-              amount += sum
+              //let sum = parseInt(day.toString()) * (parseFloat(formatEther(getUser[k].investedAmount)) / 100 * 0.36)
+              amount += parseFloat(formatEther(getUserAmount)) //sum
             }
         }
       }

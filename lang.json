@@ -34,7 +34,8 @@
       "error":"Error",
       "notEnoughUsdt" : "Not enough USDT",
       "purchaseError":"Purchase error",
-      "yourWalletHasNotPassed":"Your wallet has not passed AML verification and has been disabled. Connect another wallet."
+      "yourWalletHasNotPassed":"Your wallet has not passed AML verification and has been disabled. Connect another wallet.",
+      "partners":"Partners"
     }
   },
     "RU": {
@@ -72,9 +73,8 @@
         "error":"Ошибка",
         "notEnoughUsdt" : "Недостаточно USDT",
         "purchaseError":"Ошибка покупки",
-        "yourWalletHasNotPassed":"Ваш кошелек не прошел проверку AML и был отключен. Подключите другой кошелек."
-
+        "yourWalletHasNotPassed":"Ваш кошелек не прошел проверку AML и был отключен. Подключите другой кошелек.",
+        "partners":"Партнеры"
       }
     }
 }
-
