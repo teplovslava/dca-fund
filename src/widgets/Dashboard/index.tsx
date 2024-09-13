@@ -1,15 +1,13 @@
 import lang from "@/../lang.json";
-import { Statistics, Dashboard as DashBoard } from "@features/StatisticsInfo";
+import { Statistics, } from "@features/StatisticsInfo";
 import Icon from "@shared/ui/components/Icon";
-import { useContext } from "react";
-import { LangContext } from "@/app/context/LangaugeContext";
+import { WalletInfo } from "@/features/Wallet";
 
 function Dashboard() {
-  const { language } = useContext(LangContext);
   return (
-    <div className="grid grid-cols-1 gap-[15px]">
+    <div className="grid grid-cols-[2fr_1fr] gap-[15px]  max-[1440px]:grid-cols-1">
       <Statistics />
-      <DashBoard />
+      <WalletInfo />
     </div>
   );
 }

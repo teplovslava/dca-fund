@@ -37,7 +37,7 @@ const percents = [
   {months: 12, day: 0.33}
 ]
 
-function Dashboard() {
+function DashboardStatistics() {
   const { address } = useAccount()
   const [userData, setUserData] = useState(null)
   const [allAmounts, setAllAmounts] = useState(0)
@@ -315,4 +315,4 @@ const tableHeader = [
   );
 }
 
-export default Dashboard;
+export default DashboardStatistics;

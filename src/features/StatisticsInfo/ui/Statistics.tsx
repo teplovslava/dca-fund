@@ -43,7 +43,7 @@ function Statistics() {
       <p className="font-[700] text-[#fff] text-[20px]">
           {language.stacking.stacking}
         </p>
-        <div className="grid grid-cols-4 max-[676px]:grid-cols-1 max-[1024px]:grid-cols-2 max-[1024px]:gap-[20px]  items-center justify-between w-full">
+        <div className="grid grid-cols-4 max-[676px]:grid-cols-1 max-[1024px]:grid-cols-2 max-[1024px]:gap-[20px] gap-[10px]  items-center justify-between w-full">
           {fakeData.map((item, i) => (
             <PercentInfoBlock
               key={i}
