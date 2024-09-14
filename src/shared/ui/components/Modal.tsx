@@ -1,4 +1,4 @@
-import Icon from "@shared/ui/components/Icon";
+import Icon from "./Icon";
 import { MouseEvent } from "react";
 
 interface IModal {

@@ -1,10 +1,12 @@
 import React, { createContext, useState } from "react";
-import langList from "@/../lang.json";
+import langList from '../../../lang.json'
 import { useCookies } from "react-cookie";
 
 interface ILanguageContext {
   children: React.ReactNode;
 }
+
+type LanguageKeys = keyof typeof langList;
 
 export const LangContext = createContext<any>(null);
 
@@ -17,10 +19,10 @@ export default function LangaugeContext({ children }: ILanguageContext) {
     setCookie("language" , "EN")
   }
 
-  const [language, setLanguage] = useState(langList[cookie.language]);
+  const [language, setLanguage] = useState(langList[(cookie.language as LanguageKeys)]);
 
   const changeLanguahe = (key: string) => {
-    setLanguage(langList[key]);
+    setLanguage(langList[key as LanguageKeys]);
     setCookie("language", key);
   };
 

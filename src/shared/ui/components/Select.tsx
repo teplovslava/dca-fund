@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Icon from "@shared/ui/components/Icon";
+import Icon from "./Icon";
 
 interface ISelect {
   listItems: ListItem[];
@@ -13,7 +13,9 @@ type ListItem = {
 };
 
 function Select({ listItems, cb, defaultIndex = 0 }: ISelect) {
-  const [list, setList] = useState(listItems);
+
+
+  const list = listItems;
   const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
   const [isShowed, setIsShowed] = useState(false);
 
@@ -40,7 +42,7 @@ function Select({ listItems, cb, defaultIndex = 0 }: ISelect) {
         className="z-[11] flex flex-row items-center justify-between element-background px-[20px] py-[15px] pr-[13px] rounded-[8px] cursor-pointer"
       >
         <p className="text-[16px] text-[#6C7E8C] select-none">
-          {list[selectedIndex].title}
+          {list[selectedIndex]?.title}
         </p>
         <Icon
           className={`${isShowed ? "rotate-180" : "rotate-0"} transition-all`}

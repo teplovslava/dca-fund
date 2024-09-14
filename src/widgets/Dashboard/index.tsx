@@ -1,7 +1,5 @@
-import lang from "@/../lang.json";
-import { Statistics, } from "@features/StatisticsInfo";
-import Icon from "@shared/ui/components/Icon";
-import { WalletInfo } from "@/features/Wallet";
+import { Statistics } from "../../features/StatisticsInfo";
+import { WalletInfo } from "../../features/Wallet";
 
 function Dashboard() {
   return (

@@ -1,5 +1,5 @@
-import { LangaugeSelect } from "@features/LanguageSelect";
-import Icon from "@shared/ui/components/Icon";
+import { LangaugeSelect } from '../../features/LanguageSelect'
+import Icon from '../../shared/ui/components/Icon';
 
 export default function Header() {
   return (

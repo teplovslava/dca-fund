@@ -85,7 +85,7 @@ const partnerList = [
 ];
 
 function Partners() {
-  const { language } = useContext(LangContext);
+  const { language } = useContext<any>(LangContext);
   return (
     <div className="element-background">
       <p className="font-[700] text-[#fff] text-[20px] mb-4">

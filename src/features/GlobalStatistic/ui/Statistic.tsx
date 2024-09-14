@@ -1,11 +1,11 @@
 import { type BaseError, useAccount, useReadContracts } from 'wagmi'
 import { readContract } from 'wagmi/actions'
-import { staking } from '@/abi/abi'
+import { staking } from '../../../abi/abi'
 import { bscTestnet as net } from 'wagmi/chains'
-import { config } from '@/config'
+import { config } from '../../../config'
 import { formatEther } from 'viem'
 import { useContext, useEffect, useState } from 'react'
-import { LangContext } from '@/app/context/LangaugeContext'
+import { LangContext } from '../../../app/context/LangaugeContext'
 
 const formatter = new Intl.NumberFormat('en', {
   //style: 'currency',
@@ -15,7 +15,7 @@ const formatter = new Intl.NumberFormat('en', {
 function Statistic() {
   const { address } = useAccount()
   const [allAccrued, setAllAccrued] = useState(0)
-  const {language} = useContext(LangContext)
+  const {language} = useContext<any>(LangContext)
 
   const allAccruedContract = async () => {
     const payPeriods3 = await readContract(config, {

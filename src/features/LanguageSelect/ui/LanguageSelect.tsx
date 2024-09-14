@@ -1,4 +1,4 @@
-import Select from "@shared/ui/components/Select";
+import Select from "../../../shared/ui/components/Select";
 import {useLanguage} from "../model/useLanguage";
 import { useCookies } from "react-cookie";
 
@@ -12,12 +12,13 @@ function LanguageSelect() {
 
   if(defaultIndex < 0) defaultIndex = 0
 
+
   return (
     <div className="w-[88px]">
       <Select
         listItems={langsNames}
         defaultIndex={defaultIndex}
-        cb={(item: string, i: number) => changeLanguahe(item)}
+        cb={(item) => changeLanguahe(item)}
       />
     </div>
   );

@@ -1,15 +1,15 @@
 import { useContext, useRef, useState } from "react";
-import IError from "@/app/interfaces";
+import { IError } from "../../../app/interfaces";
 
 import { type BaseError, useAccount, useChainId, useConnect, useReadContracts } from 'wagmi'
-import { usdt, staking } from '@/abi/abi'
+import { usdt, staking } from '../../../abi/abi'
 import { bscTestnet as net } from 'wagmi/chains'
 import { formatEther, parseEther } from 'viem'
 import { switchChain, waitForTransactionReceipt, writeContract } from 'wagmi/actions';
-import { config } from '@/config'
+import { config } from "../../../config";
 import { Bounce, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { LangContext } from "@/app/context/LangaugeContext";
+import { LangContext } from "../../../app/context/LangaugeContext";
 
 export default function useStackingModal() {
   const inputRef = useRef(null);
@@ -17,7 +17,7 @@ export default function useStackingModal() {
   const [period, setPeriod] = useState(3);
   const [error, setError] = useState<IError[]>([]);
   const [loading,setLoading] = useState(false)
-  const {language} = useContext(LangContext)
+  const {language} = useContext<any>(LangContext)
   const chainId = useChainId()
   const { connectors } = useConnect()
 

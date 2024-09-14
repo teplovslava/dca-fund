@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { LangContext } from "@/app/context/LangaugeContext";
+import { LangContext } from "../../app/context/LangaugeContext";
 
 function Footer() {
-  const {language} = useContext(LangContext)
+  const {language} = useContext<any>(LangContext)
 
   const footerLinks = [
     {

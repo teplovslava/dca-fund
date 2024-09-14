@@ -1,10 +1,9 @@
-import lang from "@/../lang";
-import Button from "@shared/ui/components/Button";
-import PercentInfoBlock from "@shared/ui/components/PercentInfoBlock";
-import { StackingModal } from "@features/StackingModal";
+import Button from "../../../shared/ui/components/Button";
+import PercentInfoBlock from "../../../shared/ui/components/PercentInfoBlock";
+import { StackingModal } from "../../StackingModal";
 import { useContext, useState } from "react";
 import { useAccount } from "wagmi";
-import { LangContext } from "@/app/context/LangaugeContext";
+import { LangContext } from "../../../app/context/LangaugeContext";
 import { Bounce, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,7 +13,7 @@ function Statistics() {
   const [isVisibleStackingModal, setIsVisibleStackingModal] = useState(false);
   const { address } = useAccount()
 
-  const {language} = useContext(LangContext)
+  const {language} = useContext<any>(LangContext)
 
   const fakeData = [
     {

@@ -1,17 +1,15 @@
-import lang from "@/../lang.json";
-import { Table, RowItem } from "@shared/ui/components/Table";
-import { Row } from "@shared/ui/components/Table";
-import Button from "@shared/ui/components/Button";
+import { Table, RowItem, Row } from "../../../shared/ui/components/Table";
+import Button from "../../../shared/ui/components/Button";
 
-import { type BaseError, useAccount, useReadContracts } from 'wagmi'
-import { staking } from '@/abi/abi'
+import { useAccount, useReadContracts } from 'wagmi'
+import { staking } from "../../../abi/abi";
 import { bscTestnet as net } from 'wagmi/chains'
 import { readContract, waitForTransactionReceipt, writeContract } from 'wagmi/actions'
-import { config } from '@/config'
-import { formatEther, parseEther } from 'viem'
+import { config } from "../../../config";
+import { formatEther } from 'viem'
 import { useContext, useEffect, useState } from "react";
-import { usdt } from "@/abi/abi";
-import { LangContext } from "@/app/context/LangaugeContext";
+import { usdt } from "../../../abi/abi";
+import { LangContext } from "../../../app/context/LangaugeContext";
 import { Bounce, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -42,8 +40,8 @@ function DashboardStatistics() {
   const [userData, setUserData] = useState(null)
   const [allAmounts, setAllAmounts] = useState(0)
   const [isReinvest, setIsReinvest] = useState(false)
-  const [arrayAllAmounts, setArrayAllAmounts] = useState([])
-  const {language} = useContext(LangContext)
+  // const [arrayAllAmounts, setArrayAllAmounts] = useState([])
+  const {language} = useContext<any>(LangContext)
 
   const { data, error, isPending } = useReadContracts({
     contracts: [{ 

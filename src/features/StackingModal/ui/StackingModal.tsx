@@ -1,13 +1,13 @@
 import { createPortal } from "react-dom";
-import Modal from "@shared/ui/components/Modal";
-import Input from "@shared/ui/components/Input";
-import Select from "@/shared/ui/components/Select";
+import Modal from "../../../shared/ui/components/Modal";
+import Input from "../../../shared/ui/components/Input";
+import Select from "../../../shared/ui/components/Select";
 import React, { useContext, useState } from "react";
-import Button from "@shared/ui/components/Button";
-import useStackingModal from "@/features/StackingModal/model/useStackingModal";
-import { LangContext } from "@/app/context/LangaugeContext";
-import CustomCheckbox from "@/shared/ui/components/CustomCheckbox";
-import Loader from "@/shared/ui/components/Loader";
+import Button from "../../../shared/ui/components/Button";
+import useStackingModal from "../model/useStackingModal";
+import { LangContext } from '../../../app/context/LangaugeContext'
+import CustomCheckbox from "../../../shared/ui/components/CustomCheckbox";
+import Loader from "../../../shared/ui/components/Loader";
 
 interface IProps {
   isVisible: boolean;
@@ -20,7 +20,7 @@ function StackingModal({ isVisible, setIsVisible }: IProps) {
   const { inputRef, value, setValue, setPeriod, error, onHandleClick, loading } =
     useStackingModal();
 
-    const {language} = useContext(LangContext)
+    const {language} = useContext<any>(LangContext)
     const [politicsChecked, setPoliticsChecked] = useState(false)
 
     const data = [

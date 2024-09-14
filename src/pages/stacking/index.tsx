@@ -1,9 +1,7 @@
-import { Statistics } from "@features/StatisticsInfo";
-import Dashboard from "@widgets/Dashboard";
-import { WalletInfo } from "@features/Wallet";
-import { GlobalStatistic } from "@features/GlobalStatistic";
-import Partners from "@widgets/Partners";
-import DashboardStatistics from "@/features/StatisticsInfo/ui/Dashboard";
+import Dashboard from "../../widgets/Dashboard";
+import { GlobalStatistic } from '../../features/GlobalStatistic'
+import Partners from "../../widgets/Partners";
+import DashboardStatistics from "../../features/StatisticsInfo/ui/Dashboard";
 
 function StackingPage() {
   return (

@@ -2,7 +2,7 @@ import React, {
   DetailedHTMLProps,
   InputHTMLAttributes,
 } from "react";
-import  IError  from "@/app/interfaces";
+import { IError } from "../../../app/interfaces";
 
 interface IInput
   extends DetailedHTMLProps<

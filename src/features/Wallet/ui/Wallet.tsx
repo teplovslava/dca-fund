@@ -1,13 +1,13 @@
 import MetaMaskImage from "@shared/ui/images/metamask.png";
-import Icon from "@shared/ui/components/Icon";
-import Button from "@shared/ui/components/Button";
+import Icon from "../../../shared/ui/components/Icon";
+import Button from "../../../shared/ui/components/Button";
 import { useAccount, useDisconnect, useConnect, useChainId } from 'wagmi'
 import { switchChain } from "wagmi/actions";
-import { useContext, useEffect, useState } from "react";
-import { LangContext } from "@/app/context/LangaugeContext";
+import React, { useContext, useEffect, useState } from "react";
+import { LangContext } from "../../../app/context/LangaugeContext";
 import { Bounce, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { config } from '@/config'
+import { config } from "../../../config";
 import  { bscTestnet as net } from "viem/chains"
 
 function Wallet() {
@@ -17,7 +17,7 @@ function Wallet() {
   const chainId = useChainId()
   const [curentChain, setCurentChain] = useState("")
 
-  const {language} = useContext(LangContext)
+  const {language} = useContext<any>(LangContext)
 
   const getAML = async () => {
     if(address){
@@ -136,8 +136,8 @@ function Wallet() {
             </Button>
           )
         :
-          connectors.map((connector) => (
-            <>
+          connectors.map((connector, i) => (
+            <React.Fragment key={i}>
             {connector.name != "Injected" &&
             <Button type="button" view="primary" key={connector.name} onClick={() => {
               connect({ connector }, { onSuccess: () => {
@@ -147,7 +147,7 @@ function Wallet() {
               {connector.name}
             </Button>
             }
-            </>
+            </React.Fragment>
           ))
         }
       </div>

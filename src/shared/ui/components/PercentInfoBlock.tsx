@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LangContext } from "@/app/context/LangaugeContext";
+import { LangContext } from "../../../app/context/LangaugeContext";
 
 interface IPercentInfoBlock {
   percent: number;
@@ -7,7 +7,7 @@ interface IPercentInfoBlock {
 }
 
 function PercentInfoBlock({ percent, period }: IPercentInfoBlock) {
-  const {language} = useContext(LangContext)
+  const {language} = useContext<any>(LangContext)
   return (
     <div className="flex flex-row gap-[20px] items-center">
       <div className="bg-gradient-to-tr from-[#FFFFFF]/0 to-[#FDDF96] p-[1px] min-w-[66px] h-[66px] rounded-full shrink-0">
